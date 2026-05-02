@@ -4,15 +4,20 @@ namespace AppointmentManager.Models
 {
     public class User
     {
-        public string userId { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
+        private string _userId;
+        public string UserId { get { return _userId; } set { _userId = value; } }
+
+        private string _name;
+        public string Name { get { return _name; } set { _name = value; } }
+
+        private string _email;
+        public string Email { get { return _email; } set { _email = value; } }
 
         public User(string userId, string name, string email)
         {
-            this.userId = userId;
-            this.name = name;
-            this.email = email;
+            this.UserId = userId;
+            this.Name = name;
+            this.Email = email;
         }
 
         public void joinGroupMeeting(GroupMeeting groupMeeting)

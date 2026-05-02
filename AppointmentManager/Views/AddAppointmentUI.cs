@@ -59,46 +59,7 @@ namespace AppointmentManager.Views
             txtReminderMessage = new TextBox { Location = new Point(140, 255), Width = 210, Enabled = false, PlaceholderText = "Reminder Message" };
 
             btnSave = new Button { Text = "Save", Location = new Point(140, 310), Width = 100, Height = 40, BackColor = Color.FromArgb(0, 120, 212), ForeColor = Color.White, FlatStyle = FlatStyle.Flat };
-            btnSave.Click += (s, e) => {
-                var appt = getUserInput();
-                if (validateInput(appt))
-                {
-                    Appointment conflict = calendarController.findConflictingAppointment(appt.startTime, appt.endTime);
-                    if (conflict != null)
-                    {
-                        string choice = showWarning($"Conflict with '{conflict.name}'.\n[Yes] to Replace old.\n[No] to enter New Time.", "Conflict");
-                        if (choice == "Replace")
-                        {
-                            calendarController.removeAppointment(conflict);
-                            calendarController.addAppointment(appt);
-                            showConfirmation("Appointment replaced successfully.");
-                            closeWindow();
-                        }
-                        return;
-                    }
-
-                    GroupMeeting gm = calendarController.findGroupMeetingByNameAndDuration(appt.name, appt.getDuration());
-                    if (gm != null)
-                    {
-                        string choice = showWarning($"Group meeting '{appt.name}' found. Join it?", "Group");
-                        if (choice == "Join")
-                        {
-                            gm.addParticipant(calendarController.user);
-                            showConfirmation("Joined group meeting successfully.");
-                            closeWindow();
-                            return;
-                        }
-                    }
-
-                    calendarController.addAppointment(appt);
-                    if (chkReminder.Checked)
-                    {
-                        appt.addReminder(txtReminderMessage.Text);
-                    }
-                    showConfirmation("Appointment created successfully.");
-                    closeWindow();
-                }
-            };
+            btnSave.Click += onSaveButtonClicked;
 
             btnCancel = new Button { Text = "Cancel", Location = new Point(250, 310), Width = 100, Height = 40, FlatStyle = FlatStyle.Flat };
             btnCancel.Click += (s, e) => closeWindow();
@@ -106,24 +67,60 @@ namespace AppointmentManager.Views
             this.Controls.AddRange(new Control[] { lblTitle, lblTitleTxt, txtName, lblStart, dtpStart, lblEnd, dtpEnd, lblLoc, txtLocation, chkReminder, txtReminderMessage, btnSave, btnCancel });
         }
 
+        private void onSaveButtonClicked(object sender, EventArgs e)
+        {
+            var appt = getUserInput();
+
+            if (!calendarController.ValidateAppointment(appt))
+            {
+                showError("Invalid input: Please check name and time range.");
+                return;
+            }
+
+            Appointment conflict = calendarController.FindConflictingAppointment(appt.StartTime, appt.EndTime);
+            if (conflict != null)
+            {
+                string choice = showWarning($"Conflict with '{conflict.Name}'.\n[Yes] to Replace old.\n[No] to enter New Time.", "Conflict");
+                if (choice == "Replace")
+                {
+                    calendarController.ReplaceAppointment(conflict, appt);
+                    showConfirmation("Appointment replaced successfully.");
+                    closeWindow();
+                }
+                return;
+            }
+
+            GroupMeeting gm = calendarController.FindGroupMeetingByNameAndDuration(appt.Name, calendarController.GetDuration(appt));
+            if (gm != null)
+            {
+                string choice = showWarning($"Group meeting '{appt.Name}' found. Join it?", "Group");
+                if (choice == "Join")
+                {
+                    calendarController.AddUserToGroupMeeting(calendarController.CurrentUser, gm);
+                    showConfirmation("Joined group meeting successfully.");
+                    closeWindow();
+                    return;
+                }
+            }
+
+            if (chkReminder.Checked)
+            {
+                appt.addReminder(txtReminderMessage.Text);
+            }
+            
+            calendarController.AddAppointment(appt);
+            showConfirmation("Appointment created successfully.");
+            closeWindow();
+        }
+
         public Appointment getUserInput()
         {
             return new Appointment(txtName.Text, dtpStart.Value, dtpEnd.Value, txtLocation.Text);
         }
 
-        public bool validateInput(Appointment appointmentData)
+        public void showError(string message)
         {
-            if (string.IsNullOrWhiteSpace(appointmentData.name))
-            {
-                MessageBox.Show("Name is required.", "Error");
-                return false;
-            }
-            if (!appointmentData.isValid())
-            {
-                MessageBox.Show("Invalid time range or time is in the past.", "Error");
-                return false;
-            }
-            return true;
+            new WarningMessage(message, "Error").display();
         }
 
         public string showWarning(string message, string type)
@@ -132,10 +129,9 @@ namespace AppointmentManager.Views
             return warning.getUserChoice();
         }
 
-        public bool showConfirmation(string message)
+        public void showConfirmation(string message)
         {
-            MessageBox.Show(message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return true;
+            new WarningMessage(message, "Success").display();
         }
 
         public void closeWindow()

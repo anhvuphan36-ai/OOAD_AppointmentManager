@@ -4,40 +4,36 @@ namespace AppointmentManager.Models
 {
     public class Appointment
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string location { get; set; }
-        public DateTime startTime { get; set; }
-        public DateTime endTime { get; set; }
-        public Reminder reminder { get; set; }
+        private string _id;
+        public string Id { get { return _id; } set { _id = value; } }
+
+        private string _name;
+        public string Name { get { return _name; } set { _name = value; } }
+
+        private string _location;
+        public string Location { get { return _location; } set { _location = value; } }
+
+        private DateTime _startTime;
+        public DateTime StartTime { get { return _startTime; } set { _startTime = value; } }
+
+        private DateTime _endTime;
+        public DateTime EndTime { get { return _endTime; } set { _endTime = value; } }
+
+        private Reminder _reminder;
+        public Reminder Reminder { get { return _reminder; } set { _reminder = value; } }
 
         public Appointment(string name, DateTime startTime, DateTime endTime, string location)
         {
-            this.id = Guid.NewGuid().ToString();
-            this.name = name;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.location = location;
-        }
-
-        public bool isValid()
-        {
-            return startTime >= DateTime.Now && endTime > startTime;
-        }
-
-        public int getDuration()
-        {
-            return (int)(endTime - startTime).TotalMinutes;
-        }
-
-        public bool conflictsWith(Appointment other)
-        {
-            return (this.startTime < other.endTime && this.endTime > other.startTime);
+            this.Id = Guid.NewGuid().ToString();
+            this.Name = name;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Location = location;
         }
 
         public void addReminder(string message)
         {
-            this.reminder = new Reminder(15, message);
+            this.Reminder = new Reminder(15, message);
         }
     }
 }

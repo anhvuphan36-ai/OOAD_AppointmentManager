@@ -4,27 +4,32 @@ namespace AppointmentManager.Models
 {
     public class Reminder
     {
-        public int timeBefore { get; set; }
-        public string message { get; set; }
-        public bool isSent { get; set; }
+        private int _timeBefore;
+        public int TimeBefore { get { return _timeBefore; } set { _timeBefore = value; } }
+
+        private string _message;
+        public string Message { get { return _message; } set { _message = value; } }
+
+        private bool _isSent;
+        public bool IsSent { get { return _isSent; } set { _isSent = value; } }
 
         public Reminder(int timeBefore, string message)
         {
-            this.timeBefore = timeBefore;
-            this.message = message;
-            this.isSent = false;
+            this.TimeBefore = timeBefore;
+            this.Message = message;
+            this.IsSent = false;
         }
 
         public void scheduleReminder(DateTime appointmentTime)
         {
             // Dummy implementation
-            Console.WriteLine($"Reminder scheduled for {appointmentTime.AddMinutes(-timeBefore)}");
+            Console.WriteLine($"Reminder scheduled for {appointmentTime.AddMinutes(-TimeBefore)}");
         }
 
         public void sendReminder()
         {
-            this.isSent = true;
-            Console.WriteLine("Reminder sent: " + message);
+            this.IsSent = true;
+            Console.WriteLine("Reminder sent: " + Message);
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using AppointmentManager.Views;
 using AppointmentManager.Models;
+using AppointmentManager.Controllers;
 
 namespace AppointmentManager
 {
@@ -12,7 +13,10 @@ namespace AppointmentManager
         {
             ApplicationConfiguration.Initialize();
             User initUser = new User("U1", "Admin", "admin@test.com");
-            Application.Run(new MainScreen(initUser));
+            CalendarController controller = new CalendarController();
+            controller.Users.Add(initUser);
+            controller.CurrentUser = initUser;
+            Application.Run(new MainScreen(controller));
         }
     }
 }

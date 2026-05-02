@@ -13,9 +13,9 @@ namespace AppointmentManager.Views
         private DataGridView appointmentTable;
         private Button btnAdd;
 
-        public MainScreen(User currentUser)
+        public MainScreen(CalendarController controller)
         {
-            calendarController = new CalendarController(currentUser);
+            this.calendarController = controller;
             initComponents();
             loadAppointmentList();
         }
@@ -58,14 +58,14 @@ namespace AppointmentManager.Views
         private void loadAppointmentList()
         {
             appointmentTable.DataSource = null;
-            if(calendarController.appointments.Any()) {
-                appointmentTable.DataSource = calendarController.appointments.Select(a => new {
-                    Id = a.id,
-                    Title = a.name,
-                    Start = a.startTime.ToString("dd/MM/yyyy HH:mm"),
-                    End = a.endTime.ToString("dd/MM/yyyy HH:mm"),
-                    Location = a.location,
-                    Reminder = a.reminder != null ? "Yes" : "No"
+            if(calendarController.Appointments.Any()) {
+                appointmentTable.DataSource = calendarController.Appointments.Select(a => new {
+                    Id = a.Id,
+                    Title = a.Name,
+                    Start = a.StartTime.ToString("dd/MM/yyyy HH:mm"),
+                    End = a.EndTime.ToString("dd/MM/yyyy HH:mm"),
+                    Location = a.Location,
+                    Reminder = a.Reminder != null ? "Yes" : "No"
                 }).ToList();
                 
                 if (appointmentTable.Columns.Contains("Id"))
@@ -83,10 +83,10 @@ namespace AppointmentManager.Views
                     if (hasReminder == "Yes")
                     {
                         string id = appointmentTable.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                        var appt = calendarController.appointments.FirstOrDefault(a => a.id == id);
-                        if (appt != null && appt.reminder != null)
+                        var appt = calendarController.Appointments.FirstOrDefault(a => a.Id == id);
+                        if (appt != null && appt.Reminder != null)
                         {
-                            MessageBox.Show(appt.reminder.message, "Reminder Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            new WarningMessage(appt.Reminder.Message, "Information").display();
                         }
                     }
                 }

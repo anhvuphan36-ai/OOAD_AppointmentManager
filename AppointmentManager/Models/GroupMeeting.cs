@@ -5,23 +5,18 @@ namespace AppointmentManager.Models
 {
     public class GroupMeeting : Appointment
     {
-        public List<User> participants { get; set; }
+        private List<User> _participants;
+        public List<User> Participants { get { return _participants; } set { _participants = value; } }
 
         public GroupMeeting(string name, DateTime startTime, DateTime endTime, string location)
             : base(name, startTime, endTime, location)
         {
-            participants = new List<User>();
+            Participants = new List<User>();
         }
 
         public void addParticipant(User user)
         {
-            participants.Add(user);
-        }
-
-        public bool isSameNameAndDuration(Appointment other)
-        {
-            return this.name.Equals(other.name, StringComparison.OrdinalIgnoreCase) &&
-                   this.getDuration() == other.getDuration();
+            Participants.Add(user);
         }
     }
 }

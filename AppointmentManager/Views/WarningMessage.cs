@@ -5,32 +5,46 @@ namespace AppointmentManager.Views
 {
     public class WarningMessage
     {
-        public string messageText { get; set; }
-        public string type { get; set; } 
+        private string _messageText;
+        public string MessageText { get { return _messageText; } set { _messageText = value; } }
+        
+        private string _type;
+        public string Type { get { return _type; } set { _type = value; } }
 
         public WarningMessage(string messageText, string type)
         {
-            this.messageText = messageText;
-            this.type = type;
+            this.MessageText = messageText;
+            this.Type = type;
         }
 
         public void display()
         {
-            MessageBox.Show(messageText, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Type == "Error")
+            {
+                MessageBox.Show(MessageText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Type == "Success")
+            {
+                MessageBox.Show(MessageText, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(MessageText, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public string getUserChoice()
         {
-            if (type == "Conflict")
+            if (Type == "Conflict")
             {
-                var res = MessageBox.Show(messageText, "Conflict Detected", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                var res = MessageBox.Show(MessageText, "Conflict Detected", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (res == DialogResult.Yes) return "Replace";
                 if (res == DialogResult.No) return "NewTime";
                 return "Cancel";
             }
-            else if (type == "Group")
+            else if (Type == "Group")
             {
-                var res = MessageBox.Show(messageText, "Group Meeting Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var res = MessageBox.Show(MessageText, "Group Meeting Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 return res == DialogResult.Yes ? "Join" : "Ignore";
             }
             return "Cancel";
