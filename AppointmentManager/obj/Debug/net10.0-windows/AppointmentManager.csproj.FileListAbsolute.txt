@@ -1,0 +1,14 @@
+C:\OOAD\AppointmentManager\bin\Debug\net10.0-windows\AppointmentManager.exe
+C:\OOAD\AppointmentManager\bin\Debug\net10.0-windows\AppointmentManager.deps.json
+C:\OOAD\AppointmentManager\bin\Debug\net10.0-windows\AppointmentManager.runtimeconfig.json
+C:\OOAD\AppointmentManager\bin\Debug\net10.0-windows\AppointmentManager.dll
+C:\OOAD\AppointmentManager\bin\Debug\net10.0-windows\AppointmentManager.pdb
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.AssemblyInfoInputs.cache
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.AssemblyInfo.cs
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.csproj.CoreCompileInputs.cache
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.dll
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\refint\AppointmentManager.dll
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.pdb
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\AppointmentManager.genruntimeconfig.cache
+C:\OOAD\AppointmentManager\obj\Debug\net10.0-windows\ref\AppointmentManager.dll
