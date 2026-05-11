@@ -44,6 +44,7 @@ namespace AppointmentManager.Views
             }
             else if (Type == "Group")
             {
+                // Mở hộp thoại cảnh báo phát hiện trùng Group Meeting
                 var res = MessageBox.Show(MessageText, "Group Meeting Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 return res == DialogResult.Yes ? "Join" : "Ignore";
             }

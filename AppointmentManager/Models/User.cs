@@ -20,9 +20,10 @@ namespace AppointmentManager.Models
             this.Email = email;
         }
 
+        // Định nghĩa hành động một người dùng tự xin tham gia vào nhóm
         public void joinGroupMeeting(GroupMeeting groupMeeting)
         {
-            groupMeeting.addParticipant(this);
+            groupMeeting.addParticipant(this); // Đẩy chính bản thân (this) vào nhóm
         }
 
         public void replaceAppointment(Appointment oldApp, Appointment newApp)

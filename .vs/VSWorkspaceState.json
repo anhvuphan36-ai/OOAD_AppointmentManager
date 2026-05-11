@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AppointmentManager",
-    "\\AppointmentManager\\Controllers"
+    "\\AppointmentManager\\Controllers",
+    "\\AppointmentManager\\Models"
   ],
-  "SelectedNode": "\\AppointmentManager\\Controllers\\CalendarController.cs",
+  "SelectedNode": "\\AppointmentManager\\Models\\GroupMeeting.cs",
   "PreviewInSolutionExplorer": false
 }

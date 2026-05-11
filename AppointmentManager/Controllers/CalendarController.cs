@@ -81,13 +81,15 @@ namespace AppointmentManager.Controllers
             return Appointments.FirstOrDefault(a => CheckConflict(a, temp));
         }
 
+        // Hàm tìm xem có nhóm nào trùng tên và trùng thời lượng không
         public GroupMeeting FindGroupMeetingByNameAndDuration(string name, int duration)
         {
             return Appointments.OfType<GroupMeeting>().FirstOrDefault(g => 
-                g.Name.Equals(name, StringComparison.OrdinalIgnoreCase) && 
-                GetDuration(g) == duration);
+                g.Name.Equals(name, StringComparison.OrdinalIgnoreCase) && // Không phân biệt hoa thường
+                GetDuration(g) == duration); // Thời lượng phải bằng nhau
         }
 
+        // Cầu nối để nhét 1 người dùng xác định vào 1 nhóm xác định
         public void AddUserToGroupMeeting(User user, GroupMeeting groupMeeting)
         {
             groupMeeting.addParticipant(user);

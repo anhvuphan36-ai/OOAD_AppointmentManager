@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\OOAD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\Controllers\\AppointmentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\Controllers\\AppointmentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\Models\\GroupMeeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\Models\\GroupMeeting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\Models\\Appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\Models\\Appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\Models\\Reminder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\Models\\Reminder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\Controllers\\CalendarController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\Controllers\\CalendarController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\AppointmentManager.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\AppointmentManager.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\OOAD\\AppointmentManager\\AppointmentManager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppointmentManager\\AppointmentManager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +38,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "AppointmentManager\\Controllers\\AppointmentController.cs",
-              "ToolTip": "C:\\OOAD\\AppointmentManager\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "AppointmentManager\\Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\Models\\User.cs",
+              "RelativeDocumentMoniker": "AppointmentManager\\Models\\User.cs",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\Models\\User.cs",
+              "RelativeToolTip": "AppointmentManager\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T15:59:49.795Z",
+              "WhenOpened": "2026-05-04T10:15:04.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppointmentManager.csproj.user",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\AppointmentManager.csproj.user",
+              "RelativeDocumentMoniker": "AppointmentManager\\AppointmentManager.csproj.user",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\AppointmentManager.csproj.user",
+              "RelativeToolTip": "AppointmentManager\\AppointmentManager.csproj.user",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2026-05-04T10:14:11.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GroupMeeting.cs",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\Models\\GroupMeeting.cs",
+              "RelativeDocumentMoniker": "AppointmentManager\\Models\\GroupMeeting.cs",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\Models\\GroupMeeting.cs",
+              "RelativeToolTip": "AppointmentManager\\Models\\GroupMeeting.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:11:01.017Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppointmentManager.csproj",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\AppointmentManager.csproj",
+              "RelativeDocumentMoniker": "AppointmentManager\\AppointmentManager.csproj",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\AppointmentManager.csproj",
+              "RelativeToolTip": "AppointmentManager\\AppointmentManager.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-04T10:10:56.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Reminder.cs",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\Models\\Reminder.cs",
+              "RelativeDocumentMoniker": "AppointmentManager\\Models\\Reminder.cs",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\Models\\Reminder.cs",
+              "RelativeToolTip": "AppointmentManager\\Models\\Reminder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:08:29.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "AppointmentManager\\Models\\Appointment.cs",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\Models\\Appointment.cs",
+              "RelativeToolTip": "AppointmentManager\\Models\\Appointment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:08:28.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CalendarController.cs",
+              "DocumentMoniker": "C:\\OOAD\\AppointmentManager\\Controllers\\CalendarController.cs",
+              "RelativeDocumentMoniker": "AppointmentManager\\Controllers\\CalendarController.cs",
+              "ToolTip": "C:\\OOAD\\AppointmentManager\\Controllers\\CalendarController.cs",
+              "RelativeToolTip": "AppointmentManager\\Controllers\\CalendarController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T10:08:24.78Z"
             }
           ]
         }
